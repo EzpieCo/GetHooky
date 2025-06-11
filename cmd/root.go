@@ -14,6 +14,9 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "hooky",
 	Short: "A simple git hook manager that can handle your hooks",
+    CompletionOptions: cobra.CompletionOptions{
+        DisableDefaultCmd: true, // this gets rid of the default completion cmd
+    },
 }
 
 func Execute() {

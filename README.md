@@ -1,0 +1,68 @@
+# 🪝 GetHooky
+![latest version](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
+
+![logo](./assets/getHooky.svg)
+
+> *Because the intern shouldn't `git push` broken, untested, unlinted, code to production* - wise old programmer, 2025
+
+A simple git hook manager for everyone. Inspired from [husky](https://github.com/typicode/husky) but built for **every stack**. Because git is git whether you code in python, rust, go, or if you ever feel like killing youself nodejs.
+
+GetHooky will make sure that you run your commands before(or after) doing any git command.
+
+**NOTE:** GetHooky doesn't have control over what you do, so use wisely.
+
+## 🚀 Features
+
+-  Cross platform, except windows(thank me later).
+- ✅ Works on **any project** irrespective of language
+- 👶 Very easy to use, even a 5 year old can use it.
+-  Store hooks in a version controlable manner, inside `.hooky` directory
+- 🧠 manages only hooks it has access to - hooks with `# hookie ya rookie`
+- 🛠 Easy to install, update and share hooks with your team
+
+##  Installation
+
+| Method | Command |
+| ------ | ------- |
+| curl   | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"`|
+| wget   | `sh -c "$(wget -O- https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"`|
+
+## 🧑💻 Usage
+
+```bash
+hooky init
+```
+Creates a `.hooky` directory in your current directory
+```bash
+hooky add <hook-name> <command>
+```
+Creates a `.hooky/<hook-name>` file with `<command>` in it.
+```bash
+hooky install
+```
+Installs all `.hooky/*` hooks into `.git/hooks/*` with custom hooks in mind.
+
+## 🧠 How It Works
+GetHooky stores all your hooks inside of `.hooky` where you can version control them and share it with your team.
+
+When you run `hooky install` it generates a `.git/hooky/<hook-name>` with the following content:
+
+```bash
+#!/bin/sh
+# hooky ya rookie
+
+# your command here
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "🚫 Hook '<hook-name>' failed."
+  echo "👉 To bypass, use: git commit --no-verify"
+  echo ""
+  exit 1
+fi
+```
+
+Only files with `# hooky ya rookie` are controlled by GetHooky, your custom ones are always skipped.
+
+## 🌐 Docs
+You can read the full docs at [here](https://ezpieco.github.io/GetHooky/)

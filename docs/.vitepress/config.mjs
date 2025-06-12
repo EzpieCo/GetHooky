@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: "GetHooky",
     description: "CLI tool for managing your git hooks",
+    base: "/GetHooky",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         sidebar: [

@@ -5,6 +5,15 @@ export default defineConfig({
     title: "GetHooky",
     description: "CLI tool for managing your git hooks",
     base: "/GetHooky",
+    head: [
+        [
+            "link",
+            {
+                rel: "icon",
+                href: "./assets/getHooky.png"
+            }
+        ]
+    ],
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         sidebar: [

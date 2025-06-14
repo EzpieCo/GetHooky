@@ -18,7 +18,8 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         sidebar: [
             { text: "Introduction", link: "/" },
-            { text: "Get Started", "link": "/get-started" }
+            { text: "Get Started", "link": "/get-started" },
+            { text: "Changelog", "link": "/changelog" }
         ],
 
         socialLinks: [

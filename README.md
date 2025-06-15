@@ -1,5 +1,6 @@
 # 🪝 GetHooky
 ![latest version](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
+![latest release](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
 
 ![logo](./assets/getHooky.svg)
 

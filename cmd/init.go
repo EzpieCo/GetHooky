@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ezpieco/gethooky/internals/core"
+	"github.com/ezpieco/gethooky/internal/core"
 	"github.com/spf13/cobra"
 )
 

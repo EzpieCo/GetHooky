@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ezpieco/gethooky/internals/core"
+	"github.com/ezpieco/gethooky/internal/core"
 	"github.com/ezpieco/gethooky/utils"
 	"github.com/spf13/cobra"
 )

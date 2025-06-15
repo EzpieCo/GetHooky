@@ -6,9 +6,9 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 
+	"github.com/ezpieco/gethooky/internals/core"
 	"github.com/ezpieco/gethooky/utils"
 	"github.com/spf13/cobra"
 )
@@ -18,9 +18,13 @@ var addCmd = &cobra.Command{
 	Short: "Add a git hook to the .hook directory",
 	Args:  cobra.MinimumNArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
-		hookName := args[0]
-		command := strings.Join(args[1:], " ")
+        pwd, err := os.Getwd()
+        if err != nil {
+            fmt.Printf("❌ Failed to get current directory path:\n %v\n", err)
+        }
 
+        hookName := args[0]
+		command := strings.Join(args[1:], " ")
 		hookyDir := utils.GetHookyDir()
 
 		if _, err := os.Stat(hookyDir); os.IsNotExist(err) {
@@ -33,12 +37,10 @@ var addCmd = &cobra.Command{
 			return
 		}
 
-		filePath := filepath.Join(hookyDir, hookName)
-		err := os.WriteFile(filePath, []byte(command+"\n"), 0644)
-		if err != nil {
-			fmt.Printf("❌ Task Failed successfully: %v\n", err)
-			return
-		}
+        if err := core.AddHook(pwd, hookName, command); err != nil {
+            fmt.Printf("❌ Could not add hook:\n %v\n", err)
+            return
+        }
 
 		fmt.Printf("✅ Added hook to .hooky/%s 🎉 \n", hookName)
 	},

@@ -11,9 +11,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var version = "v1.0.0"
+
 var rootCmd = &cobra.Command{
 	Use:   "hooky",
 	Short: "A simple git hook manager that can handle your hooks",
+    Version: version,
     CompletionOptions: cobra.CompletionOptions{
         DisableDefaultCmd: true, // this gets rid of the default completion cmd
     },

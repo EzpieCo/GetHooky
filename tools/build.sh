@@ -21,11 +21,10 @@ for platform in "${PLATFORMS[@]}"; do
   read -r GOOS GOARCH <<< "$platform"
 
   output_name="$APPNAME-$GOOS-$GOARCH"
-  #[ "$GOOS" == "windows" ] && output_name+=".exe"
 
   echo "🔧 Building for $GOOS/$GOARCH as $output_name"
 
-  GOOS=$GOOS GOARCH=$GOARCH go build -o "../builds/$output_name" ".."
+  GOOS=$GOOS GOARCH=$GOARCH go build -ldflags="-s -w" -o "../builds/$output_name" ".."
 
   echo "✅ $output_name built!"
 done

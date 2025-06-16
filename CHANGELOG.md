@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-06-16
+
+### Added
+
+- Support for `-v` and `--version`
+
+### Fixed
+
+- Reduced build size from ~3.5MB to ~2.3MB
+
 ## [0.1.0] - 2025-06-11
 
 ### Added

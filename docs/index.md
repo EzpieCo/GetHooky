@@ -1,4 +1,5 @@
 ![latest release](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
+![number of downloads](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
 ![latest release](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
 
 > *The art of forgetting to run the linter isn't old* - wise old programmer, 2025

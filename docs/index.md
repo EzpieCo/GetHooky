@@ -1,6 +1,6 @@
 ![latest release](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
 ![number of downloads](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
-![latest release](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
+![github repo starts](https://img.shields.io/github/stars/ezpieco/gethooky?style=for-the-badge&logo=github)
 
 > *The art of forgetting to run the linter isn't old* - wise old programmer, 2025
 

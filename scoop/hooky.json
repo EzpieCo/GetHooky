@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.0.0/hooky-windows-amd64",
-            "bin": "hooky-windows-amd64",
+            "bin": "hooky.exe",
             "hash": "sha256:995b1fd8d7ab73c37a1ea87225d89c487eb02dacadd3e4710230c5f543904d95"
         }
     }

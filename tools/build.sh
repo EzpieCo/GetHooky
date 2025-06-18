@@ -21,6 +21,7 @@ for platform in "${PLATFORMS[@]}"; do
   read -r GOOS GOARCH <<< "$platform"
 
   output_name="$APPNAME-$GOOS-$GOARCH"
+  [ "$GOOS" == "windows" ] && output_name="hooky.exe"  
 
   echo "🔧 Building for $GOOS/$GOARCH as $output_name"
 

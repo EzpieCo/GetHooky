@@ -20,7 +20,7 @@ But with GetHooky, all you have to do is, install once, use as many time as you 
 
 ## Features
 
-- Cross-platform(might mess up with Windows)
+- Cross-platform
 - Works on any project irrespective of Language
 - Super easy to work with... literally
 - All git hooks will work

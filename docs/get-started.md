@@ -12,6 +12,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ezpieco/gethooky/master/to
 sh -c "$(wget -O- https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"
 ```
 
+```shell [scoop]
+scoop bucket add hooky https://github.com/ezpieco/gethooky
+scoop install hooky
 :::
 
 ## `hooky init`

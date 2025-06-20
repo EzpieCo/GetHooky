@@ -27,6 +27,7 @@ GetHooky will make sure that you run your commands before(or after) doing any gi
 | ------ | ------- |
 | curl   | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"`|
 | wget   | `sh -c "$(wget -O- https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"`|
+| scoop(windows recommended)   | `scoop bucket add hooky https://github.com/ezpieco/gethooky && scoop install hooky`|
 
 ## 🧑💻 Usage
 

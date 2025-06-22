@@ -48,7 +48,7 @@ func TestInstallCommand(t *testing.T) {
     _ = RunInit(tmp)
 
     hookyDir := filepath.Join(tmp, utils.GetHookyDir())
-    gitHookDir := filepath.Join(tmp, utils.GetGitHookyDir())
+    gitHookDir := filepath.Join(tmp, utils.GetGitHookDir())
     _ = os.Mkdir(hookyDir, 0755)
     _ = os.Mkdir(gitHookDir, 0755)
     _ = os.WriteFile(filepath.Join(hookyDir, "pre-commit"), []byte("pytest"), 0755)

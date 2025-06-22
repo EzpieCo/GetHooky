@@ -18,6 +18,6 @@ func GetHookyDir() string {
     return HookyDir
 }
 
-func GetGitHookyDir() string {
+func GetGitHookDir() string {
     return filepath.Join(GitDir, HookDir)
 }

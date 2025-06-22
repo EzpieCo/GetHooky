@@ -24,7 +24,7 @@ var installCmd = &cobra.Command{
         }
 
         hookyDir := utils.GetHookyDir()
-		gitHookDir := utils.GetGitHookyDir()
+		gitHookDir := utils.GetGitHookDir()
 
 		if _, err := os.Stat(hookyDir); os.IsNotExist(err) {
 			fmt.Println("🤬 YOU IDIOT! run `hooky init` and then `hooky add` for creating hooks first!")

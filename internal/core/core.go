@@ -21,7 +21,7 @@ func AddHook(basePath string,hookName string, command string) error {
 
 func InstallHooks(basePath string) error {
     hookyPath := filepath.Join(basePath, utils.GetHookyDir())
-    gitHookPath := filepath.Join(basePath, utils.GetGitHookyDir())
+    gitHookPath := filepath.Join(basePath, utils.GetGitHookDir())
     
     files, err := os.ReadDir(hookyPath)
     if err != nil {
@@ -74,4 +74,21 @@ func InstallHooks(basePath string) error {
     }
 
     return nil
+}
+
+func UninstallHooks(basePath string) error {
+    hookPath := filepath.Join(basePath, utils.GetGitHookyDir())
+
+    files, err := os.ReadDir(hookPath)
+    if err != nil {
+        return fmt.Errorf("Failed to read %s directory", hookPath)
+    }
+
+    for _, file := range files {
+        if file.IsDir() {
+            continue
+        }
+
+        path := filepath.Join(hookPath, )
+
 }

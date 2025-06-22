@@ -77,7 +77,9 @@ func InstallHooks(basePath string) error {
 }
 
 func UninstallHooks(basePath string) error {
-    hookPath := filepath.Join(basePath, utils.GetGitHookyDir())
+    hookPath := filepath.Join(basePath, utils.GetGitHookDir())
+
+    hookyTag := "# hooky ya rookie"
 
     files, err := os.ReadDir(hookPath)
     if err != nil {
@@ -89,6 +91,18 @@ func UninstallHooks(basePath string) error {
             continue
         }
 
-        path := filepath.Join(hookPath, )
+        path := filepath.Join(hookPath, file.Name())
 
+        content, _ := os.ReadFile(path)
+
+        if strings.Contains(string(content), hookyTag) {
+            err := os.Remove(path)
+            if err != nil {
+                return fmt.Errorf("Error while removing %s hook: %s", file.Name(), err)
+            }
+
+        }
+    }
+
+    return nil
 }

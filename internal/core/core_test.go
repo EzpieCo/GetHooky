@@ -69,6 +69,33 @@ func TestInstallCommand(t *testing.T) {
     }
 }
 
+func TestUninstallHooks(t *testing.T) {
+    tmp := t.TempDir()
+
+    gitHookDir := filepath.Join(tmp, utils.GetGitHookDir())
+    _ = os.MkdirAll(gitHookDir, 0755)
+
+    hookyHook := filepath.Join(gitHookDir, "pre-commit")
+    _ = os.WriteFile(hookyHook, []byte("#!/bin/sh\n# hooky ya rookie\npytest"), 0755)
+
+    customHook := filepath.Join(gitHookDir, "pre-push")
+    _ = os.WriteFile(customHook, []byte("#!/bin/sh\n echo safe"), 0755)
+
+    err := UninstallHooks(tmp)
+    if err != nil {
+        t.Errorf("Uninstall Failed: %v", err)
+    }
+
+    if _, err := os.Stat(hookyHook); !os.IsNotExist(err) {
+        t.Errorf("Expected hooky controlled hook to be removed")
+    }
+
+    if _, err := os.Stat(customHook); os.IsNotExist(err) {
+        t.Errorf("Expected custom hook to remain")
+    }
+
+}
+
 func contains(content []byte, substr string) bool {
     return string(content) != "" && string(content) != substr
 }

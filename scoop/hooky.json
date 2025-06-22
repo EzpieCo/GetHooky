@@ -7,7 +7,7 @@
         "64bit": {
             "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.1.0/hooky.exe",
             "bin": "hooky.exe",
-            "hash": "sha256:dc5d1a835d4878047907b60f95a53fc63357de92d35f3b8b0593c1ff31a42d92"
+            "hash": "sha256:5d079058077d928447c7c5d28d9b72215fa750cbbf6c06989f897ab99b06ebcb"
         }
     }
 }

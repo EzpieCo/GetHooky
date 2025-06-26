@@ -14,7 +14,7 @@ GetHooky will make sure that you run your commands before(or after) doing any gi
 
 ## 🚀 Features
 
--  Cross platform, except windows(thank me later).
+-  Cross platform.
 - ✅ Works on **any project** irrespective of language
 - 👶 Very easy to use, even a 5 year old can use it.
 -  Store hooks in a version controlable manner, inside `.hooky` directory

@@ -68,3 +68,14 @@ Only files with `# hooky ya rookie` are controlled by GetHooky, your custom ones
 
 ## 🌐 Docs
 You can read the full docs at [here](https://ezpieco.github.io/GetHooky/)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->

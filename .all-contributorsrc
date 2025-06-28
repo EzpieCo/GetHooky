@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "flowXM",
+      "name": "flowXM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54032222?v=4",
+      "profile": "https://github.com/flowXM",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "GetHooky",
+  "projectOwner": "EzpieCo"
+}

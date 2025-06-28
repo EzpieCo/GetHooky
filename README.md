@@ -1,4 +1,7 @@
 # 🪝 GetHooky
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![latest version](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
 ![latest release](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
 
@@ -14,7 +17,7 @@ GetHooky will make sure that you run your commands before(or after) doing any gi
 
 ## 🚀 Features
 
--  Cross platform, except windows(thank me later).
+-  Cross platform.
 - ✅ Works on **any project** irrespective of language
 - 👶 Very easy to use, even a 5 year old can use it.
 -  Store hooks in a version controlable manner, inside `.hooky` directory
@@ -72,3 +75,19 @@ You can read the full docs at [here](https://ezpieco.github.io/GetHooky/)
 ## Thank you
 
 [![Forkers repo roster for @ezpieco/gethooky](https://reporoster.com/forks/dark/ezpieco/gethooky)](https://github.com/ezpieco/gethooky/network/members)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/flowXM"><img src="https://avatars.githubusercontent.com/u/54032222?v=4?s=100" width="100px;" alt="flowXM"/><br /><sub><b>flowXM</b></sub></a><br /><a href="https://github.com/EzpieCo/GetHooky/commits?author=flowXM" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->

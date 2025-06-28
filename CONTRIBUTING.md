@@ -52,7 +52,36 @@ Here are some great ways to start:
 - Fix a bug or add a feature (see Issues)
 - Improve logging or messages
 - Enhance this file ;)
-- Or do anything you want! I'll just reject it ;)
+
+## Stick to the same page
+
+To make sure we all are on the same page and everybody understands each other.
+
+Please make sure to follow these rules before doing anything:
+
+- Please make sure once you are done coding, make a PR on the `develop` branch **only**.
+- Most of the time you should not write test suites unless you have added a feature that needs a new test.
+- Please make sure that the logic is separate from the cobra command. Basically, files inside of `cmd/` directory shouldn't handle logic, only connecting.
+- Please make sure all logic code goes inside of `internal/core/core.go` file **only**.
+- Most of the time when adding a new command please make sure that your code follows this standard:
+  ```go
+  pwd, err := os.Getwd()
+  if err != nil {
+    fmt.Printf("❌ Failed to get current directory path:\n %v\n", err)
+    return
+  }
+
+  if err := core.FunctionName(pwd);
+  ```
+  This means your logic function should take a basePath, making it easier to write test.
+- Make sure that you put this comment on top of the code that you write:
+```go
+/*
+CONTRIBUTOR - @veryCoolUsername <email if you want (optional)>
+*/
+```
+- Please follow **PascalCase** for functions, and **camelCase** for variables.
+- Finally the least, most, important thing, name your variables and functions smartly. We are all rookies here.
 
 ## Code of Conduct
 Be nice. Be helpful. We're all rookies at most things.

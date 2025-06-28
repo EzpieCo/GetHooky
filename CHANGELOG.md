@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-06-28
+
+### Added
+
+- `ignore` command to ignore particular hooks
+- `unignore` command to unignore particular hooks
+
 ## [1.1.0] - 2025-06-22 
 
 ### Added

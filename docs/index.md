@@ -25,4 +25,17 @@ But with GetHooky, all you have to do is, install once, use as many time as you 
 - Super easy to work with... literally
 - All git hooks will work
 
-get [started!](/get-started)
+## Contributors
+
+This project can't exist without the help of Contributors and stargazzers.
+
+### Stargazers
+[![Stargazers repo roster for @ezpieco/gethooky](https://reporoster.com/stars/dark/ezpieco/gethooky)](https://github.com/ezpieco/gethooky/stargazers)
+
+### Contributors
+<br />
+<a href="https://github.com/ezpieco/gethooky/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ezpieco/gethooky" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).

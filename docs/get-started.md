@@ -48,16 +48,6 @@ hooky install
 > ⚠️ Keep in mind that whenever you add or update hooks with `hooky add` 
 make sure to run `hooky install` in order for them to work.
 
-## `hooky uninstall`
-
-The `uninstall` command lets you uninstall hooks from your `.git/hooks` directory.
-
-```bash
-hooky uninstall
-```
-
-> ⚠️ This command does not uninstall any of your own custom hooks
-
 ## Try it out
 
 Congratulations! You have sucessfully setup GetHooky in your project 🎉!

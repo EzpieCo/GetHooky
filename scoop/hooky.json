@@ -1,13 +1,13 @@
 {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "GetHooky - A simple, language-agnostic way to manage Git hooks.",
     "homepage": "https://github.com/EzpieCo/GetHooky",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.1.0/hooky.exe",
+            "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.2.0/hooky.exe",
             "bin": "hooky.exe",
-            "hash": "sha256:5d079058077d928447c7c5d28d9b72215fa750cbbf6c06989f897ab99b06ebcb"
+            "hash": "sha256:a12bfdfbb5825b3658c091723e54c460f06e3b6af9e4602e0a233a10f397caa4"
         }
     }
 }

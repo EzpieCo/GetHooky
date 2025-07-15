@@ -74,7 +74,7 @@ You can read the full docs at [here](https://ezpieco.github.io/GetHooky/)
 
 ## Thank you
 
-[![Forkers repo roster for @ezpieco/gethooky](https://reporoster.com/forks/dark/ezpieco/gethooky)](https://github.com/ezpieco/gethooky/network/members)
+[![Forkers repo roster for @ezpieco/gethooky](https://reporoster.com/stars/dark/ezpieco/gethooky)](https://github.com/ezpieco/gethooky/network/members)
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->

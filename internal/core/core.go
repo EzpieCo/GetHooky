@@ -208,3 +208,53 @@ func UnignoreHook(basePath string, hookName string) error {
 
 	return nil
 }
+
+/*
+CONTRIBUTOR - @thatonecodes
+*/
+
+func ShowHook(basePath string, hookName string) error {
+	hookyDir := filepath.Join(basePath, utils.GetHookyDir())
+
+	if _, err := os.Stat(hookyDir); os.IsNotExist(err) {
+		return fmt.Errorf(".hooky directory not found. Please run `hooky init` first")
+	}
+
+	if hookName == "" {
+		files, err := os.ReadDir(hookyDir)
+		if err != nil {
+			return fmt.Errorf("failed to read .hooky directory: %v", err)
+		}
+
+		if len(files) == 0 {
+			fmt.Println("No hooks found.")
+			return nil
+		}
+
+		fmt.Println("Current hooks:")
+		for _, f := range files {
+			fmt.Printf("- %s\n", f.Name())
+		}
+		return nil
+	}
+
+	hookPath := filepath.Join(basePath, utils.GetHookyDir(), hookName)
+	fileInfo, err := os.Stat(hookPath)
+	if errors.Is(err, os.ErrNotExist) {
+		return fmt.Errorf("specified hook does not exist: %s", hookName)
+	}
+	if err != nil {
+		return fmt.Errorf("failed to access hook: %v", err)
+	}
+	if fileInfo.IsDir() {
+		return fmt.Errorf("specified hook is a directory, not a file: %s", hookName)
+	}
+
+	content, err := os.ReadFile(hookPath)
+	if err != nil {
+		return fmt.Errorf("could not read hook %s: %v", hookName, err)
+	}
+	
+	fmt.Print(string(content))
+	return nil
+}

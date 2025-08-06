@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-08-06
+
+### Added
+
+- `show` command to show hooks that the current project has.
+
+### contributors
+
+new contributor joined
+
+- [@Maher](https://github.com/thatonecodes) - added `show` cmd
+
 ## [1.2.0] - 2025-06-28
 
 ### Added
@@ -14,11 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `ignore` command to ignore particular hooks
 - `unignore` command to unignore particular hooks
 
-### Contributors
+### contributors
 
-New contributor joined
+new contributor joined
 
-- [@flowXM](https://github.com/flowXM) - added `ignore` and `unignore` cmd
+- [@flowxm](https://github.com/flowxm) - added `ignore` and `unignore` cmd
 
 ## [1.1.0] - 2025-06-22 
 

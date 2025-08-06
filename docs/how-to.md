@@ -30,3 +30,17 @@ You can unignore a hook as well using the `unignore` cmd.
 ```bash
 hooky unignore pre-commit
 ```
+
+## Show hooks
+
+When the project grows too big a lot of hooks might be getting utilized. To see what all hooks are present use the `show` cmd.
+
+```bash
+hooky show
+```
+
+When you want to see the content of a hook just use the `show` cmd with the specific hook.
+
+```bash
+hooky show <hook-name>
+```

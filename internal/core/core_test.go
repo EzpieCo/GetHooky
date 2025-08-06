@@ -148,6 +148,52 @@ func TestIgnoreHook(t *testing.T) {
 	}
 }
 
+func TestShowHook(t *testing.T) {
+	tmp := t.TempDir()
+	// Initialize directory structure
+	err := RunInit(tmp)
+	if err != nil {
+		t.Fatalf("RunInit failed: %v", err)
+	}
+	originalDir, err := os.Getwd()
+	if err != nil {
+		t.Fatalf("could not get current directory: %v", err)
+	}
+	if err := os.Chdir(tmp); err != nil {
+		t.Fatalf("could not change to tmp dir: %v", err)
+	}
+	defer func() {
+		if err := os.Chdir(originalDir); err != nil {
+			t.Fatalf("could not revert to original dir: %v", err)
+		}
+	}()
+	
+	hookyDir := filepath.Join(tmp, utils.GetHookyDir())
+	hookName := "pre-commit"
+	hookPath := filepath.Join(hookyDir, hookName)
+	testContent := "#!/bin/bash\necho 'test hook'"
+	if err := os.WriteFile(hookPath, []byte(testContent), 0755); err != nil {
+		t.Fatalf("Failed to write hook file: %v", err)
+	}
+
+	ogStdout := os.Stdout
+	os.Stdout, _ = os.Open(os.DevNull)
+	defer func() { os.Stdout = ogStdout }()
+
+	// Test showing specific hook content
+	err = ShowHook(tmp, hookName)
+	if err != nil {
+		t.Fatalf("ShowHook failed: %v", err)
+	}
+	os.Stdout = ogStdout
+	
+	// Test showing non-existent hook
+	err = ShowHook(tmp, "non-existent")
+	if err == nil || !strings.Contains(err.Error(), "specified hook does not exist") {
+		t.Errorf("Expected error about non-existent hook, got: %v", err)
+	}
+}
+
 func TestUnignoreHook(t *testing.T) {
 	tmp := t.TempDir()
 

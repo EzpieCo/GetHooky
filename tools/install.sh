@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 set -e
 
@@ -14,14 +14,12 @@ else
     exit 1
 fi
 
-# Some idiot thought it was a great idea to use windows with linux like feel
-if [[ "$OS" == "Cygwin" ]]; then
-   OS="windows" 
-fi
-
-URL="https://github.com/EzpieCo/GetHooky/releases/latest/download/hooky-${OS}-${ARCH}"
+URL="https://github.com/EzpieCo/GetHooky/releases/download/v1.3.0/hooky-${OS}-${ARCH}"
 
 curl -L "$URL" -o hooky
-mv hooky /usr/bin/hooky
 
-echo "✅ GetHooky installed successfully! Get started with 'hooky --help'"
+mv hooky ~/.local/bin/hooky
+echo "✅ GetHooky installed to ~/.local/bin"
+echo "👉 Make sure ~/.local/bin is in your PATH"
+
+echo "🚀 Get started with 'hooky --help'"

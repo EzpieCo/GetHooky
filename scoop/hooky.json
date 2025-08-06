@@ -5,7 +5,7 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.2.0/hooky.exe",
+            "url": "https://github.com/EzpieCo/GetHooky/releases/download/v1.3.0/hooky.exe",
             "bin": "hooky.exe",
             "hash": "sha256:c4ff40def67a0e5c4d0c74b898e4e2cd65efb453cd1bfeaca02f7e26d87eac5f"
         }

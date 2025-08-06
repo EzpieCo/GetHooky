@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-08-06
+
+### Added
+
+- `show` command to show hooks that the current project has.
+
 ## [1.2.0] - 2025-06-28
 
 ### Added

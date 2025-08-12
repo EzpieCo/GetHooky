@@ -14,12 +14,17 @@ else
     exit 1
 fi
 
+if [[ "$OS" == "GNU/Linux" ]]; then
+    OS="linux"
+fi
+
+
 URL="https://github.com/EzpieCo/GetHooky/releases/download/v1.3.0/hooky-${OS}-${ARCH}"
 
 curl -L "$URL" -o hooky
 
-mv hooky ~/.local/bin/hooky
-echo "✅ GetHooky installed to ~/.local/bin"
-echo "👉 Make sure ~/.local/bin is in your PATH"
+mv hooky /usr/bin/hooky
+chmod +x /usr/bin/hooky
 
+echo "✅ GetHooky installed to /usr/bin"
 echo "🚀 Get started with 'hooky --help'"

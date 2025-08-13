@@ -12,16 +12,33 @@ import (
 
 const ignoreTag = "# ignore"
 
+/*
+ RunInit will create a .hooky directory in the basePath
+
+ basePath should be the root path of the git directory
+*/
 func RunInit(basePath string) error {
 	hookyDir := filepath.Join(basePath, utils.GetHookyDir())
 	return os.Mkdir(hookyDir, 0755)
 }
 
+/*
+ AddHook will create a file named hookName under .hooky with command as its content
+
+ hookyName must be listed in git's official document:
+ https://git-scm.com/docs/githooks#%5Fhooks
+*/
 func AddHook(basePath string, hookName string, command string) error {
 	hookyPath := filepath.Join(basePath, utils.GetHookyDir(), hookName)
 	return os.WriteFile(hookyPath, []byte(command), 0644)
 }
 
+/* 
+ InstallHooks installs all the hooks from the .hooky directory into the git's hook directory.
+ It skips hook with the ignore tag, and empty hooks
+
+ Hooks which aren't marked by hooky those are not updated nor touched by hooky
+*/
 func InstallHooks(basePath string) error {
 	hookyPath := filepath.Join(basePath, utils.GetHookyDir())
 	gitHookPath := filepath.Join(basePath, utils.GetGitHookDir())
@@ -84,6 +101,10 @@ func InstallHooks(basePath string) error {
 	return nil
 }
 
+/*
+ UninstallHooks removes all hooks present in git's hooks dir.
+ It only removes hooks which are marked by GetHooky
+*/
 func UninstallHooks(basePath string) error {
 	hookPath := filepath.Join(basePath, utils.GetGitHookDir())
 
@@ -116,9 +137,13 @@ func UninstallHooks(basePath string) error {
 }
 
 /*
+IgnoreHook adds an ignore tag to the top of the hookName inside .hooky dir.
+It only adds the tag to hooks marked by gethooky.
+
+Does not add tag to already ignored hooks.
+
 CONTRIBUTOR - @flowXM
 */
-
 func IgnoreHook(basePath string, hookName string) error {
 	hookPath := filepath.Join(basePath, utils.GetHookyDir(), hookName)
 
@@ -162,9 +187,10 @@ func IgnoreHook(basePath string, hookName string) error {
 }
 
 /*
+UnignoreHook removes the ignore tag from the hookName present in .hooky dir.
+
 CONTRIBUTOR - @flowXM
 */
-
 func UnignoreHook(basePath string, hookName string) error {
 	hookPath := filepath.Join(basePath, utils.GetHookyDir(), hookName)
 
@@ -210,9 +236,11 @@ func UnignoreHook(basePath string, hookName string) error {
 }
 
 /*
+By default, ShowHook displays which hooks are present in the .hooky dir.
+When a hookName is provided it shows the content of that hook.
+
 CONTRIBUTOR - @thatonecodes
 */
-
 func ShowHook(basePath string, hookName string) error {
 	hookyDir := filepath.Join(basePath, utils.GetHookyDir())
 

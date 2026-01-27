@@ -8,6 +8,15 @@ Adding hooks is very simple. Just use the `add` cmd.
 hooky add pre-commit "echo 'hello world\!'"
 ```
 
+## Append hooks
+
+By Default hooky rewrites all hooks, if you want to append the content of a perticular
+hook, just pass the `--append` flag to the `add` cmd.
+
+```bash
+hoooky add pre-commit "gicko" --append
+```
+
 ## Uninstall all hooks
 
 Uninstalling hooks is very simple. Just use the `uninstall` cmd.

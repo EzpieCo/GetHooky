@@ -28,8 +28,24 @@ func RunInit(basePath string) error {
  hookyName must be listed in git's official document:
  https://git-scm.com/docs/githooks#%5Fhooks
 */
-func AddHook(basePath string, hookName string, command string) error {
+func AddHook(basePath string, hookName string, command string, appendMode bool) error {
 	hookyPath := filepath.Join(basePath, utils.GetHookyDir(), hookName)
+
+	if appendMode {
+		file, err := os.OpenFile(hookyPath, os.O_APPEND | os.O_WRONLY, 0644)
+
+		if err != nil {
+			return fmt.Errorf("Failed to open file for appending: %v", err)
+		}
+		defer file.Close()
+
+		if _, err := file.WriteString("\n" + command); err != nil {
+			return fmt.Errorf("Failed to append file with given content: %v", err)
+		}
+
+		return nil
+	}
+
 	return os.WriteFile(hookyPath, []byte(command), 0644)
 }
 

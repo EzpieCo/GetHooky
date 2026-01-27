@@ -13,9 +13,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var append bool;
+
 var addCmd = &cobra.Command{
 	Use:   "add",
 	Short: "Add a git hook to the .hook directory",
+	Long: `Add a git hook to the .hook directory.
+
+	By default the cmd rewrites the entire content of the file. To over come this
+	use the --append flag`,
 	Args:  cobra.MinimumNArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
         pwd, err := os.Getwd()
@@ -37,7 +43,7 @@ var addCmd = &cobra.Command{
 			return
 		}
 
-        if err := core.AddHook(pwd, hookName, command); err != nil {
+        if err := core.AddHook(pwd, hookName, command, append); err != nil {
             fmt.Printf("❌ Could not add hook:\n %v\n", err)
             return
         }
@@ -47,5 +53,6 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
+	addCmd.Flags().BoolVarP(&append, "append", "a", false, "append content to a given hook")
 	rootCmd.AddCommand(addCmd)
 }

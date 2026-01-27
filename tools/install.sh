@@ -19,7 +19,7 @@ if [[ "$OS" == "GNU/Linux" ]]; then
 fi
 
 
-URL="https://github.com/EzpieCo/GetHooky/releases/download/v1.3.0/hooky-${OS}-${ARCH}"
+URL="https://github.com/EzpieCo/GetHooky/releases/download/v1.4.0/hooky-${OS}-${ARCH}"
 
 curl -L "$URL" -o hooky
 

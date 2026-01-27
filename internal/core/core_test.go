@@ -24,11 +24,11 @@ func TestRunInit(t *testing.T) {
 
 }
 
-func TestAddCommand(t *testing.T) {
+func TestAddCommandWithoutAppendFlag(t *testing.T) {
 	tmp := t.TempDir()
 	_ = RunInit(tmp)
 
-	err := AddHook(tmp, "pre-commit", "echo 'help me'")
+	err := AddHook(tmp, "pre-commit", "echo 'help me'", false)
 	if err != nil {
 		t.Fatalf("AddHook failed: %v\n", err)
 	}
@@ -41,6 +41,27 @@ func TestAddCommand(t *testing.T) {
 
 	if string(content) != "echo 'help me'" {
 		t.Errorf("expected \"echo 'help me'\" got: %s", string(content))
+	}
+}
+
+func TestAddCommandWithAppendFlag(t *testing.T) {
+	tmp := t.TempDir()
+	_ = RunInit(tmp)
+	_ = AddHook(tmp, "pre-commit", "python", false)
+
+	err := AddHook(tmp, "pre-commit", "golang", true)
+	if err != nil {
+		t.Fatalf("AddHook failed while Append: %v\n", err)
+	}
+
+	path := filepath.Join(tmp, ".hooky", "pre-commit")
+	content, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatalf("Error while reading file: %v\n", err)
+	}
+
+	if string(content) != "python\ngolang" {
+		t.Errorf("expected \"python\ngolang\" got: %s", string(content))
 	}
 }
 

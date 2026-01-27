@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-01-27
+
+### Added
+
+- `append` flag to the `add` command allowing user to append a hook.
+
 ## [1.3.0] - 2025-08-06
 
 ### Added

@@ -4,12 +4,15 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![latest version](https://img.shields.io/github/v/release/ezpieco/gethooky?style=for-the-badge)
 ![latest release](https://img.shields.io/github/downloads/ezpieco/gethooky/total?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/ezpieco/gethooky?style=for-the-badge)
+
+Inspired from [husky](https://github.com/typicode/husky) but built for **every stack**. Because git is git whether you code in python, rust, go, or nodejs.
 
 ![logo](./assets/getHooky.svg)
 
 > *Because the intern shouldn't `git push` broken, untested, unlinted, code to production* - wise old programmer, 2025
 
-A simple git hook manager for everyone. Inspired from [husky](https://github.com/typicode/husky) but built for **every stack**. Because git is git whether you code in python, rust, go, or if you ever feel like killing youself nodejs.
+Get hooks but for every stack - Python, Node, Rust, Go, anything.
 
 GetHooky will make sure that you run your commands before(or after) doing any git command.
 
@@ -18,11 +21,23 @@ GetHooky will make sure that you run your commands before(or after) doing any gi
 ## 🚀 Features
 
 -  Cross platform.
-- ✅ Works on **any project** irrespective of language
+- ✅ Works with any language stack(python, go, rust, node)
 - 👶 Very easy to use, even a 5 year old can use it.
 -  Store hooks in a version controlable manner, inside `.hooky` directory
-- 🧠 manages only hooks it has access to - hooks with `# hookie ya rookie`
+- 🧠 manages only hooks it has access to hooks with `# hookie ya rookie`
 - 🛠 Easy to install, update and share hooks with your team
+
+## ⚡ Blazingly Fast Example
+
+Prevent interns from pushing broken commits
+
+```
+$ hooky init
+$ hooky add pre-commit "pytest"
+$ hooky install
+```
+
+And then try running commit and let the black magic work!
 
 ##  Installation
 
@@ -32,7 +47,7 @@ GetHooky will make sure that you run your commands before(or after) doing any gi
 | wget   | `sh -c "$(wget -O- https://raw.githubusercontent.com/ezpieco/gethooky/master/tools/install.sh)"`|
 | scoop(windows recommended)   | `scoop bucket add hooky https://github.com/ezpieco/gethooky && scoop install hooky`|
 
-## 🧑💻 Usage
+## ⚡ Quick Start
 
 ```bash
 hooky init
@@ -46,6 +61,14 @@ Creates a `.hooky/<hook-name>` file with `<command>` in it.
 hooky install
 ```
 Installs all `.hooky/*` hooks into `.git/hooks/*` with custom hooks in mind.
+
+## Why not X?
+
+|    Tool    |   Language   | Git hook sharing |
+|------------|--------------|------------------|
+|    Husky   | Node.js only |        Yes       |
+| pre-commit |  Python only |        Yes       |
+|  GetHooky  | Any language |        Yes       |
 
 ## 🧠 How It Works
 GetHooky stores all your hooks inside of `.hooky` where you can version control them and share it with your team.
@@ -71,6 +94,8 @@ Only files with `# hooky ya rookie` are controlled by GetHooky, your custom ones
 
 ## 🌐 Docs
 You can read the full docs at [here](https://ezpieco.github.io/GetHooky/)
+
+⭐ If you find GetHooky useful, consider starring the repo!
 
 ## Thank you
 
